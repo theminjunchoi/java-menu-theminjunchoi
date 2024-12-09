@@ -25,6 +25,10 @@ public class InputView {
             System.out.println(coachName + INPUT_COACH_CANNOT_EAT_MENUS);
             String menuNameInput = Console.readLine();
             MenuNameValidator.validateMenuName(menuNameInput);
+            List<String> cannotEatMenus = List.of(menuNameInput.replace(" ","").split(","));
+            Coach coach = new Coach(coachName, cannotEatMenus);
+            coaches.add(coach);
         }
+        return coaches;
     }
 }
