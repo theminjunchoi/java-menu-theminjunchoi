@@ -1,6 +1,7 @@
 package menu.domain;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public enum Category {
@@ -23,5 +24,13 @@ public enum Category {
             Menu menu = new Menu(menuName);
             this.menuList.add(menu);
         }
+    }
+
+    public static Category of(String menuName) {
+        Category category = Arrays.stream(values())
+                .filter(value -> value.menuList.contains(new Menu(menuName)))
+                .findAny()
+                .orElse(INVALID_CATEGORY);
+        return category;
     }
 }
