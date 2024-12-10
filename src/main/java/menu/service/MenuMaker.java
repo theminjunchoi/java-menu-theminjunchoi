@@ -2,6 +2,7 @@ package menu.service;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
+import java.util.stream.Collectors;
 import menu.domain.Category;
 import menu.domain.Coach;
 import menu.domain.Menu;
@@ -20,7 +21,7 @@ public class MenuMaker {
         List<String> menus = category.getMenuList()
                 .stream()
                 .map(Menu::getMenuName)
-                .toList();
+                .collect(Collectors.toList());
         for (Coach coach : coaches) {
             Menu menu = makeRandomMenu(menus, coach);
             coach.getRecommendMenus().add(menu);

@@ -16,10 +16,13 @@ public class Coach {
         this.recommendMenus = new ArrayList<>();
     }
 
+    public String getCoachName() {
+        return coachName;
+    }
+
     public List<Menu> getRecommendMenus() {
         return recommendMenus;
     }
-
 
     public List<Menu> getCannotEatMenus() {
         return cannotEatMenus;

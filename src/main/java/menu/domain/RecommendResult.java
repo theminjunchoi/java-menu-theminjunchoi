@@ -33,4 +33,8 @@ public class RecommendResult {
             menuMaker.makeRandomMenus();
         }
     }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
 }

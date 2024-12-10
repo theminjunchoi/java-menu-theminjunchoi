@@ -20,6 +20,7 @@ public class MenuController {
         List<Coach> coaches = getInputs();
         RecommendResult recommendResult = new RecommendResult(coaches);
         recommendResult.makeRecommendResult();
+        outputView.printRecommendResult(coaches, recommendResult.getCategories());
     }
 
     private List<Coach> getInputs() {
