@@ -33,4 +33,12 @@ public enum Category {
                 .orElse(INVALID_CATEGORY);
         return category;
     }
+
+    public static Category makeCategory(int randomNumber) {
+        Category category = Arrays.stream(values())
+                .filter(value -> value.categoryNumber == randomNumber)
+                .findAny()
+                .orElse(INVALID_CATEGORY);
+        return category;
+    }
 }
