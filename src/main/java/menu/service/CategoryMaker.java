@@ -3,6 +3,7 @@ package menu.service;
 import java.util.ArrayList;
 import java.util.List;
 import menu.domain.Category;
+import menu.util.exception.CategoryException;
 import menu.util.randomNumberGenerator.CategoryRandomNumberGenerator;
 
 public class CategoryMaker {
@@ -40,6 +41,11 @@ public class CategoryMaker {
     }
 
     private void validateCategory(Category category, List<Category> categories) {
-
+        int count = (int) categories.stream()
+                .filter(value -> value.equals(category))
+                .count();
+        if(count > CATEGORY_DUPLICATE_LIMIT) {
+            throw new IllegalStateException(CategoryException.OUT_OF_DUPLICATE_LIMIT.getExceptionMessage());
+        }
     }
 }
