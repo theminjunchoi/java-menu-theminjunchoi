@@ -6,4 +6,8 @@ public class Menu {
     public Menu(String menuName) {
         this.menuName = menuName;
     }
+
+    public String getMenuName() {
+        return menuName;
+    }
 }

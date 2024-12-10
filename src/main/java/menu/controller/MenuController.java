@@ -2,6 +2,7 @@ package menu.controller;
 
 import java.util.List;
 import menu.domain.Coach;
+import menu.domain.RecommendResult;
 import menu.view.InputView;
 import menu.view.OutputView;
 
@@ -17,6 +18,8 @@ public class MenuController {
     public void run() {
         outputView.printServiceStart();
         List<Coach> coaches = getInputs();
+        RecommendResult recommendResult = new RecommendResult(coaches);
+        recommendResult.makeRecommendResult();
     }
 
     private List<Coach> getInputs() {

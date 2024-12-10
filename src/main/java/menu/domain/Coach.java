@@ -15,4 +15,13 @@ public class Coach {
         }
         this.recommendMenus = new ArrayList<>();
     }
+
+    public List<Menu> getRecommendMenus() {
+        return recommendMenus;
+    }
+
+
+    public List<Menu> getCannotEatMenus() {
+        return cannotEatMenus;
+    }
 }

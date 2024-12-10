@@ -41,4 +41,8 @@ public enum Category {
                 .orElse(INVALID_CATEGORY);
         return category;
     }
+
+    public List<Menu> getMenuList() {
+        return menuList;
+    }
 }

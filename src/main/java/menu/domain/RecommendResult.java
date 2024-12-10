@@ -3,6 +3,7 @@ package menu.domain;
 import java.util.ArrayList;
 import java.util.List;
 import menu.service.CategoryMaker;
+import menu.service.MenuMaker;
 import menu.util.randomNumberGenerator.CategoryRandomNumberGenerator;
 
 public class RecommendResult {
@@ -27,6 +28,9 @@ public class RecommendResult {
     }
 
     private void generateRandomMenus() {
-
+        for (Category category : categories) {
+            MenuMaker menuMaker = new MenuMaker(coaches, category);
+            menuMaker.makeRandomMenus();
+        }
     }
 }
